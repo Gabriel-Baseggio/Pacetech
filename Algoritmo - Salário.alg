@@ -1,12 +1,11 @@
-algoritmo "Sal·rio"
+algoritmo "Sal√°rio"
 
 var
 salario, salarioFinal: real
 inicio
-Escreval("Qual o valor do seu sal·rio? ")
+Escreval("Qual o valor do seu sal√°rio? ")
 leia(salario)
 salarioFinal <- salario*1.3
-Escreval("Seu sal·rio com o aumento de 30% È: ")
-Escreval(salarioFinal)
+Escreval("Seu sal√°rio com o aumento de 30% √©: ", salarioFinal)
 fimalgoritmo
 
