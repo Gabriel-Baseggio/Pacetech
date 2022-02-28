@@ -1,46 +1,48 @@
-algoritmo "Semana 4 - 2.0"
+algoritmo "Projeto Semana 4 - 2.0"
 
 var
 menuInicial, menuMoeda, menuTemperatura, menuFinal: literal
 cotacaoDolar, reais, dolares, fahrenheit, celsius: real
 inicio
-escreval("Qual a cotação do Dólar? ")
+escreval("Qual a cotaÃ§Ã£o do DÃ³lar? ")
 leia(cotacaoDolar)
 escreval()
 
 repita
-   escreval("Escolha uma opção das seguintes: ")
+   limpatela
+   escreval("Escolha uma opÃ§Ã£o das seguintes: ")
    escreval("(1) Converter Moedas")
    escreval("(2) Converter Temperaturas")
    leia(menuInicial)
    escreval()
    escolha menuInicial
    caso "1"
-      escreval("Escolha uma opção das seguintes: ")
-      escreval("(1) Converter Dólares para Reais")
-      escreval("(2) Converter Reais para Dólares")
+      escreval("Escolha uma opÃ§Ã£o das seguintes: ")
+      escreval("(1) Converter DÃ³lares para Reais")
+      escreval("(2) Converter Reais para DÃ³lares")
       leia(menuMoeda)
       escolha menuMoeda
       caso "1"
          escreval()
-         escreval("Qual o valor em Dólares? ")
+         escreval("Qual o valor em DÃ³lares? ")
          leia(dolares)
          reais <- dolares*cotacaoDolar
-         escreval("O valor em Reais é: ", reais:4:2)
+         escreval("O valor em Reais Ã©: ", reais:4:2)
          escreval()
       caso "2"
          escreval()
          escreval("Qual o valor em Reais? ")
          leia(reais)
          dolares <- reais/cotacaoDolar
-         escreval("O valor em Dólares é: ", dolares:4:2)
+         escreval()
+         escreval("O valor em DÃ³lares Ã©: ", dolares:4:2)
          escreval()
       outrocaso
-         escreval("A opção digitada é inválida!")
+         escreval("A opÃ§Ã£o digitada Ã© invÃ¡lida!")
          escreval()
       fimescolha
    caso "2"
-      escreval("Escolha uma opção das seguintes: ")
+      escreval("Escolha uma opÃ§Ã£o das seguintes: ")
       escreval("(1) Converter Fahrenheit para Celsius")
       escreval("(2) Converter Celsius para Fahrenheit")
       leia(menuTemperatura)
@@ -50,37 +52,39 @@ repita
          escreval("Qual a temperatura em Fahrenheit? ")
          leia(fahrenheit)
          celsius <- (fahrenheit - 32) / 1.8
-         escreval("A temperatura em Celsius é: ", celsius:4:2)
+         escreval("A temperatura em Celsius Ã©: ", celsius:4:2)
          escreval()
       caso "2"
          escreval()
          escreval("Qual a temperatura em Celsius? ")
          leia(celsius)
          fahrenheit <- celsius*1.8 + 32
-         escreval("A temperatura em Fahrenheit é: ", fahrenheit:4:2)
+         escreval("A temperatura em Fahrenheit Ã©: ", fahrenheit:4:2)
          escreval()
       outrocaso
-         escreval("A opção digitada é inválida!")
+         escreval("A opÃ§Ã£o digitada Ã© invÃ¡lida!")
          escreval()
       fimescolha
    outrocaso
-      escreval("A opção digitada é inválida!")
+      limpatela
+      escreval("A opÃ§Ã£o digitada Ã© invÃ¡lida!")
       escreval()
    fimescolha
-   escreval("Escolha uma opção das seguintes: ")
-   escreval("(1) Fazer outra conversão")
+   escreval("Escolha uma opÃ§Ã£o das seguintes: ")
+   escreval("(1) Fazer outra conversÃ£o")
    escreval("(2) Finalizar programa")
    leia(menuFinal)
    se menuFinal = "1" entao
       escreval()
    senao
       se menuFinal = "2" entao
-         escreval("O programa será finalizado")
+         escreval("O programa serÃ¡ finalizado")
          escreval()
       senao
-         escreval("A opção digitada é inválida!")
+         escreval("A opÃ§Ã£o digitada Ã© invÃ¡lida!")
          escreval()
       fimse
    fimse
+   limpatela
 ate menuFinal = "2"
 fimalgoritmo
