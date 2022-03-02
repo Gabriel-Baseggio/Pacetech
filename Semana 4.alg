@@ -56,8 +56,8 @@ repita
       limpatela
    senao
       se menuFinal = "2" entao
-         escreval("O programa será finalizado")
          escreval()
+         escreval("O programa será finalizado")
       senao
          escreval("A opção digitada é inválida!")
          escreval()
