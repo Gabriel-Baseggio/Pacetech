@@ -2,9 +2,9 @@ algoritmo "Projeto Semana 5"
 
 var
 i, j, k: inteiro
-menu: literal
-horaTemp: vetor[1..8] de real
-hora, temps: vetor[1..4] de real
+menu, aux2: literal
+hora: vetor[1..4] de literal
+temps: vetor[1..4] de real
 aux: real
 
 funcao converte(conversao: literal; temperatura: real): real
@@ -36,11 +36,9 @@ para i de 1 ate 4 faca
    j <- i+4
    escreval("Qual a temperatura", i, "?")
    leia(temps[i])
-   escreval("Qual o horário que você mediu a temperatura", i, "?")
+   escreval("Qual o horário(hh:mm) que você mediu a temperatura", i, "?")
    leia(hora[i])
    escreval()
-   horaTemp[i] <- temps[i]
-   horaTemp[j] <- hora[i]
 fimpara
 
 para i de 1 ate 4 faca
@@ -49,9 +47,9 @@ para i de 1 ate 4 faca
          aux <- temps[i]
          temps[i] <- temps[j]
          temps[j] <- aux
-         aux = hora[i]
-         hora[i] = hora[j]
-         hora[j] = aux
+         aux2 <- hora[i]
+         hora[i] <- hora[j]
+         hora[j] <- aux2
       fimse
    fimpara
 fimpara
@@ -59,14 +57,14 @@ fimpara
 se menu = "1" entao
    para i de 1 ate 4 faca
       escreval()
-      escreval("Temperatura", temps[i], " graus Celsius, registrada as", hora[i], " horas")
+      escreval("Temperatura", temps[i], " graus Celsius, registrada as ", hora[i])
       escreval("Corresponde a ", converte("1", temps[i]):2:2, " graus Fahrenheit")
    fimpara
 senao
    se menu = "2" entao
       para i de 1 ate 4 faca
          escreval()
-         escreval("Temperatura", temps[i], " graus Fahrenheit, registrada as", hora[i], " horas")
+         escreval("Temperatura", temps[i], " graus Fahrenheit, registrada as ", hora[i])
          escreval("Corresponde a ", converte("2", temps[i]):2:2, " graus Celsius")
       fimpara
    fimse
