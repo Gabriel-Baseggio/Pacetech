@@ -15,7 +15,7 @@ senao
    se conversao = "2" entao
       retorne (temperatura - 32) / 1.8
    senao
-      escreval("Opção inválida!")
+      escreval("OpÃ§Ã£o invÃ¡lida!")
       retorne 0
    fimse
 fimse
@@ -24,7 +24,7 @@ fimfuncao
 inicio
 repita
    limpatela
-   escreval("Qual conversão você quer fazer?")
+   escreval("Qual conversÃ£o vocÃª quer fazer?")
    escreval("(1) Celsius para Fahrenheit")
    escreval("(2) Fahrenheit para Celsius")
    leia(menu)
@@ -36,7 +36,7 @@ para i de 1 ate 4 faca
    j <- i+4
    escreval("Qual a temperatura", i, "?")
    leia(temps[i])
-   escreval("Qual o horário que você mediu a temperatura", i, "?")
+   escreval("Qual o horÃ¡rio que vocÃª mediu a temperatura", i, "?")
    leia(hora[i])
    escreval()
    horaTemp[i] <- temps[i]
@@ -49,15 +49,9 @@ para i de 1 ate 4 faca
          aux <- temps[i]
          temps[i] <- temps[j]
          temps[j] <- aux
-      fimse
-   fimpara
-fimpara
-
-para i de 1 ate 4 faca
-   para j de 1 ate 4 faca
-      se horaTemp[j] = temps[i] entao
-         k <- j+4
-         hora[i] <- horaTemp[k]
+         aux = hora[i]
+         hora[i] = hora[j]
+         hora[j] = aux
       fimse
    fimpara
 fimpara
