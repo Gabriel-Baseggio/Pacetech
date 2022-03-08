@@ -1,7 +1,7 @@
 algoritmo "Projeto Semana 5"
 
 var
-i, j, k: inteiro
+i, j, k, comprimento: inteiro
 menu, aux2: literal
 hora: vetor[1..4] de literal
 temps: vetor[1..4] de real
@@ -31,15 +31,20 @@ repita
 ate (menu = "1") ou (menu = "2")
 
 limpatela
-
-para i de 1 ate 4 faca
-   j <- i+4
+i <- 1
+repita
    escreval("Qual a temperatura", i, "?")
    leia(temps[i])
    escreval("Qual o horário(hh:mm) que você mediu a temperatura", i, "?")
    leia(hora[i])
+   comprimento <- compr(hora[i])
+   se comprimento > 5 entao
+      escreval("O horário deve ser no formato hh:mm, informe novamente.")
+      i <- i - 1
+   fimse
+   i <- i + 1
    escreval()
-fimpara
+ate (i = 5)
 
 para i de 1 ate 4 faca
    para j de 1 ate 4 faca
@@ -57,14 +62,14 @@ fimpara
 se menu = "1" entao
    para i de 1 ate 4 faca
       escreval()
-      escreval("Temperatura", temps[i], " graus Celsius, registrada as ", hora[i])
+      escreval("A temperatura", temps[i], " em graus Celsius, registrada as ", hora[i])
       escreval("Corresponde a ", converte("1", temps[i]):2:2, " graus Fahrenheit")
    fimpara
 senao
    se menu = "2" entao
       para i de 1 ate 4 faca
          escreval()
-         escreval("Temperatura", temps[i], " graus Fahrenheit, registrada as ", hora[i])
+         escreval("A temperatura", temps[i], " em graus Fahrenheit, registrada as ", hora[i])
          escreval("Corresponde a ", converte("2", temps[i]):2:2, " graus Celsius")
       fimpara
    fimse
