@@ -17,7 +17,7 @@ public class Calculadora extends javax.swing.JFrame {
         setResizable(false);
     }
         
-    int resetar;
+    int resetar, ponto;
     double num1, num2;
     String operador;
 
@@ -608,12 +608,14 @@ public class Calculadora extends javax.swing.JFrame {
         num1 = 0.0;
         num2 = 0;
         TxtCalc.setText("");
+        ponto = 0;
     }//GEN-LAST:event_ButtonCActionPerformed
 
     private void ButtonSomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSomaActionPerformed
         num1 = Double.parseDouble(TxtCalc.getText());
         operador = "+";
         resetar = 1;
+        ponto = 0;
     }//GEN-LAST:event_ButtonSomaActionPerformed
 
     private void ButtonIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonIgualActionPerformed
@@ -634,40 +636,47 @@ public class Calculadora extends javax.swing.JFrame {
             TxtCalc.setText(String.valueOf(Math.pow(num1, num2)));
         }
         resetar = 1;
+        ponto = 0;
     }//GEN-LAST:event_ButtonIgualActionPerformed
 
     private void ButtonSubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSubActionPerformed
         num1 = Double.parseDouble(TxtCalc.getText());
         operador = "-";
         resetar = 1;
+        ponto = 0;
     }//GEN-LAST:event_ButtonSubActionPerformed
 
     private void ButtonMultiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonMultiActionPerformed
         num1 = Double.parseDouble(TxtCalc.getText());
         operador = "x";
         resetar = 1;
+        ponto = 0;
     }//GEN-LAST:event_ButtonMultiActionPerformed
 
     private void ButtonDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDivActionPerformed
         num1 = Double.parseDouble(TxtCalc.getText());
         operador = "÷";
         resetar = 1;
+        ponto = 0;
     }//GEN-LAST:event_ButtonDivActionPerformed
 
     private void ButtonCeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCeActionPerformed
         TxtCalc.setText("");
+        ponto = 0;
     }//GEN-LAST:event_ButtonCeActionPerformed
 
     private void ButtonSqrtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSqrtActionPerformed
         num1 = Double.parseDouble(TxtCalc.getText());
         TxtCalc.setText(String.valueOf(Math.sqrt(num1)));
         resetar = 1;
+        ponto = 0;
     }//GEN-LAST:event_ButtonSqrtActionPerformed
 
     private void ButtonPowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPowActionPerformed
         num1 = Double.parseDouble(TxtCalc.getText());
         operador = "^";
         resetar = 1;
+        ponto = 0;
     }//GEN-LAST:event_ButtonPowActionPerformed
 
     private void ButtonNegativeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonNegativeActionPerformed
@@ -700,11 +709,14 @@ public class Calculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonPorcentoActionPerformed
 
     private void ButtonDotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDotActionPerformed
-        if(resetar == 1){
-            TxtCalc.setText("");
+        if(ponto != 1) {
+	    	if(resetar == 1){
+	            TxtCalc.setText("");
+	        }
+	        TxtCalc.setText(TxtCalc.getText() + ".");
+	        resetar = 0;
         }
-        TxtCalc.setText(TxtCalc.getText() + ".");
-        resetar = 0;
+        ponto = 1;
     }//GEN-LAST:event_ButtonDotActionPerformed
 
     private void TemaClaroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TemaClaroActionPerformed
